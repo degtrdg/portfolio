@@ -1,0 +1,120 @@
+.port-stuff {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2em;
+}
+.projects {
+  // height: 100%;
+  padding-top: 10vh;
+  padding-bottom: 4vh;
+  // overflow: hidden
+  // display: inline-block;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    .intro-last-name {
+      color: $text-color;
+    }
+  }
+  .intro-bit {
+    margin-bottom: 1rem;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    button {
+      margin: 1rem;
+      padding: 10px 20px;
+      border-radius: 15px;
+      border: none;
+      font-family: "Montserrat", sans-serif;
+      background: $secondary-color;
+      color: white;
+      &:hover {
+        background-color: $text-color;
+      }
+      @include ease;
+    }
+  }
+}
+.proj1 {
+  align-self: center;
+  display: flex;
+  flex-flow: column;
+  border: 3px solid black;
+  width: 500px;
+  @include tab {
+    width: 90vw;
+  }
+  .proj1-name {
+    text-align: center;
+    padding: 1em;
+  }
+  .proj1-video {
+    align-self: center;
+
+    iframe {
+      display: block;
+      width: 500px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      @include tab {
+        width: 90vw;
+      }
+    }
+  }
+  .proj1-tech {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0;
+    background-color: $secondary-color;
+    .block {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+    .fab {
+      font-size: 3em;
+    }
+  }
+  .proj1-desc {
+    text-align: center;
+    padding: 1em;
+  }
+}
+.all {
+  display: flex;
+  // flex-wrap: wrap;
+  // flex-direction: row;
+
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: space-between;
+    // justify-content: center;
+    .num1 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .num2 {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+.num1 {
+  margin-left: auto;
+  margin-right: 50px;
+}
+.num2 {
+  margin-right: auto;
+  margin-left: 50px;
+}

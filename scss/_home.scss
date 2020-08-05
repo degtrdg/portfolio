@@ -1,0 +1,39 @@
+.intro {
+  // height: 100%;
+  padding-top: 35vh;
+  // overflow: hidden
+  // display: inline-block;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  @include tab {
+    padding-left: 5vw;
+  }
+  .intro-name {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    .intro-last-name {
+      color: $text-color;
+    }
+  }
+  .intro-bit {
+    margin-bottom: 1rem;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    button {
+      margin: 1rem;
+      padding: 10px 20px;
+      border-radius: 15px;
+      border: none;
+      font-family: "Montserrat", sans-serif;
+      background: $secondary-color;
+      color: white;
+      &:hover {
+        background-color: $text-color;
+      }
+      @include ease;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+$primary-color: #333646;
+$secondary-color: #252734;
+$text-color: #8a89c0;
+
+@mixin ease {
+  transition: all 0.5s ease-in-out;
+}
+
+$desktop: 1215px;
+$tab: 550px;
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: #{$tab}) {
+    @content;
+  }
+}

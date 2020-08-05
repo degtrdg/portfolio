@@ -1,0 +1,84 @@
+.burger {
+  position: fixed;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  z-index: 3;
+  @include ease;
+  .burger-lines {
+    background: white;
+    height: 3px;
+    width: 28px;
+    margin: 0 0 5px 0;
+    @include ease;
+  }
+  &:hover {
+    .burger-lines {
+      background: $text-color;
+    }
+  }
+  &.close {
+    transform: rotate(180deg);
+    .burger-lines {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      &:nth-child(2) {
+        background-color: $primary-color;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($secondary-color, 0.7);
+  padding: 3rem;
+  @include ease;
+  list-style-type: none;
+  visibility: hidden;
+  transform: translateY(-100%);
+  &.show {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  li {
+    transform: translateX(200%);
+    &.nav-items {
+      font-size: 2rem;
+      padding: 1rem;
+      @include ease;
+      font-weight: 300;
+      &:hover > a {
+        color: $text-color;
+        @include ease;
+      }
+    }
+    &.show {
+      transform: translateX(0);
+    }
+    &.active > a {
+      color: $text-color;
+    }
+  }
+}
+
+@for $i from 1 through 4 {
+  li.show:nth-child(#{$i}) {
+    transition-delay: $i * 0.1s +0.2s;
+  }
+}
